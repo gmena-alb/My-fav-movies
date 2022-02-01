@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import styled from "styled-components"
+import React, { useState } from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
 
 const Card = ({
   title,
@@ -13,18 +13,18 @@ const Card = ({
   duration,
   bigImage,
 }) => {
-  const pathToImage = getImage(image)
-  const pathToBigImage = bigImage?.file?.url
+  const pathToImage = getImage(image);
+  const pathToBigImage = bigImage?.file?.url;
 
-  const [isActive, setActive] = useState(false)
+  const [isActive, setActive] = useState(false);
   const toggleVisibility = () => {
-    setActive(!isActive)
-  }
+    setActive(!isActive);
+  };
 
   return (
     <CardWrapper className="card">
       <CardHeader
-        className={isActive ? "opened" : ""}
+        className={isActive ? 'opened' : ''}
         style={{
           background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ), url(${pathToBigImage})`,
         }}
@@ -36,15 +36,15 @@ const Card = ({
           </p>
           <div className="movie-types">
             {types.map((type, index) => {
-              return <p key={index}>{type}</p>
+              return <p key={index}>{type}</p>;
             })}
           </div>
           <div className="button" onClick={toggleVisibility}>
-            {isActive ? "Hide" : "Know more"}
+            {isActive ? 'Hide' : 'Know more'}
           </div>
         </div>
       </CardHeader>
-      <CardDescription className={isActive ? "active" : ""}>
+      <CardDescription className={isActive ? 'active' : ''}>
         <GatsbyImage
           image={pathToImage}
           alt={image.description}
@@ -56,19 +56,19 @@ const Card = ({
         </a>
       </CardDescription>
     </CardWrapper>
-  )
-}
+  );
+};
 
 const CardWrapper = styled.div`
   position: relative;
   width: 90%;
   margin-inline: auto;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 10px;
   background-color: #f1f1fd;
   box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px,
     rgb(0 0 0 / 30%) 0px 3px 7px -3px;
-`
+`;
 
 const CardHeader = styled.div`
   background-size: cover !important;
@@ -114,6 +114,7 @@ const CardHeader = styled.div`
       }
     }
     .button {
+      cursor: pointer;
       display: inline-block;
       justify-self: right;
       grid-row: 4;
@@ -128,7 +129,7 @@ const CardHeader = styled.div`
       color: black;
     }
   }
-`
+`;
 
 const CardDescription = styled.div`
   position: relative;
@@ -147,7 +148,7 @@ const CardDescription = styled.div`
     display: grid;
   }
   &:before {
-    content: "";
+    content: '';
     display: block;
     width: 90%;
     height: 1px;
@@ -174,11 +175,11 @@ const CardDescription = styled.div`
     display: inline-block;
     align-self: flex-end;
     grid-column: 2;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: white;
     text-align: right;
   }
-`
+`;
 
-export default Card
+export default Card;
