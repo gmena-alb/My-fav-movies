@@ -51,7 +51,7 @@ const Card = ({
           className="poster-img"
         />
         <p>{description.description}</p>
-        <a href={link} target="_blank">
+        <a href={link} target="_blank" rel="noreferrer">
           See on IMDB &gt;&gt;
         </a>
       </CardDescription>

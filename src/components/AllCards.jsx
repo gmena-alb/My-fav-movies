@@ -1,19 +1,19 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
-import Card from "./Card"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+import Card from './Card';
 
 const AllCards = () => {
-  const data = useStaticQuery(query)
-  const cards = data?.contentfulLandingPage.cards
+  const data = useStaticQuery(query);
+  const cards = data?.contentfulLandingPage.cards;
   return (
     <AllCardsWrapper className="cards">
-      {cards.map(card => {
-        return <Card key={card.id} {...card} />
+      {cards.map((card, index) => {
+        return <Card key={index} {...card} />;
       })}
     </AllCardsWrapper>
-  )
-}
+  );
+};
 
 const query = graphql`
   {
@@ -40,7 +40,7 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 const AllCardsWrapper = styled.section`
   position: relative;
@@ -51,6 +51,6 @@ const AllCardsWrapper = styled.section`
   align-items: flex-start;
   max-width: 70rem;
   margin-inline: auto;
-`
+`;
 
-export default AllCards
+export default AllCards;

@@ -1,8 +1,8 @@
-import React from "react"
-import Layout from "../layout/Layout"
-import Header from "../components/Header"
-import SEO from "../components/SEO"
-import AllCards from "../components/AllCards"
+import React from 'react';
+import Layout from '../layout/Layout';
+import Header from '../components/Header';
+import SEO from '../components/Seo';
+import AllCards from '../components/AllCards';
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Header />
       <AllCards />
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
