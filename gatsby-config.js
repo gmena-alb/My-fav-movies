@@ -1,6 +1,6 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -20,5 +20,8 @@ module.exports = {
         environment: process.env.CONTENTFUL_ENVIRONMENT,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
   ],
-}
+};
