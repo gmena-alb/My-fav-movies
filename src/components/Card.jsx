@@ -163,9 +163,6 @@ const CardDescription = styled.div`
     box-shadow: 0 0 20px -10px rgb(0 0 0 / 50%);
     grid-row: 1;
     grid-column: 1;
-    &.opened {
-      border-radius: ;
-    }
   }
   p {
     grid-row: 1;
