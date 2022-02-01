@@ -2,7 +2,7 @@
 
 ## Overview
 
-### The challenge
+### The task
 
 - Build a website with my favourite movies using Contentful, Gatsby and Netlify.
 - Having two different environments: Production and Staging.
